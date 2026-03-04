@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
-# Install nginx web server
+# Install and configure Nginx on Ubuntu
 
-sudo apt-get update -y
-sudo apt-get install -y nginx
-sudo echo "Holberton School" > /var/www/html/index.html
-sudo service nginx restart
+# Update package list
+apt-get update -y
+
+# Install nginx
+apt-get install nginx -y
+
+# Create custom HTML page
+echo "Holberton School for the win!" > /var/www/html/index.html
+
+# Ensure nginx is running (without using systemctl)
+service nginx start
